@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.SearchActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#39A13D"/>
+    
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/iv_search"
+            android:layout_toLeftOf="@id/iv_search"
+            android:maxLines="1"
+            android:hint="Location"
+            android:textColorHint="#80FFFFFF"
+            android:backgroundTint="#FFFFFF"/>
+    
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_search"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:srcCompat="@android:drawable/ic_menu_search"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar_layout"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    
+        <ProgressBar
+            android:id="@+id/search_progress"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+</RelativeLayout>
